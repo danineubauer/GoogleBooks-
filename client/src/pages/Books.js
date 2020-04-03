@@ -60,27 +60,38 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Search for a book</h1>
-              <form>
+              <h1>What Books Should I Read?</h1>
+            </Jumbotron>
+            <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
               />
-              </form>
+              <Input
+                value={this.state.author}
+                onChange={this.handleInputChange}
+                name="author"
+                placeholder="Author (required)"
+              />
+              <TextArea
+                value={this.state.synopsis}
+                onChange={this.handleInputChange}
+                name="synopsis"
+                placeholder="Synopsis (Optional)"
+              />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Search Book
+                Submit Book
               </FormBtn>
-            </Jumbotron>
-            
+            </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>My saved books</h1>
+              <h1>Books On My List</h1>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
