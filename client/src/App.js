@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Header from "./components/Header"
 import Nav from "./components/Nav";
-
+import { BookContext } from './context/BookContext';
+import BooksAPI from "./pages/BooksAPI";
 
 function App() {
+  const [books, setBooks] = useState([]);
+
   return (
+    <BookContext.Provider value={{ books, setBooks }}>
     <Router>
       <div>
         <Nav />
-        <Header></Header>
         <Switch>
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch>
+    <BooksAPI></BooksAPI>
       </div>
     </Router>
+    </BookContext.Provider>
   );
 }
 
