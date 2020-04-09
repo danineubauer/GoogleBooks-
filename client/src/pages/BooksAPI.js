@@ -11,6 +11,8 @@ import { BookContext } from '../context/BookContext';
 import Axios from "axios";
 
 const BooksAPI = () => {
+  const apikey = ''
+
   const [bookSearch, setBookSearch] = useState({
     search: '',
   });
@@ -76,7 +78,9 @@ const BooksAPI = () => {
       console.log('search clicked', search)
 
       Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + apikey + "&maxResults=40")
-      
+        .then(data => { 
+          console.log(data)
+        })
     }
 
     return (
