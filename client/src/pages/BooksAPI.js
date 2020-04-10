@@ -79,7 +79,7 @@ const BooksAPI = () => {
 
       Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + apikey + "&maxResults=40")
         .then(data => { 
-          console.log(data)
+          setResult.log(data.data.items)
         })
     }
 
