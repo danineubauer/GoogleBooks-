@@ -16,49 +16,9 @@ const BooksAPI = () => {
   const [bookSearch, setBookSearch] = useState({
     search: '',
   });
+
+  const [result, setResult] = useState([]);
   // const {books, setBooks} = useContext(BookContext);
-
-  // const loadBooks = () => {
-  //   API.getBooks()
-  //     .then(res => {
-  //       setBooks(res.data)
-  //     }
-  //     )
-  //     .catch(err => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //    if (books.length === 0) {
-  //    loadBooks();
-  //    }
-  //  }, []);
-
-  // const deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => {
-  //       const remainingBooks = books.filter(book => book._id !== id);
-  //       setBooks(remainingBooks);
-  //     })
-  //     .catch(err => console.log(err));
-  // };
-
-  // const incrementLikes = id => {
-  //   console.log('id of book to increase likes', id, books);
-  //   const indexToUpdate = books.findIndex(book => book._id === id);
-  //   const newBooks = [...books];
-  //   newBooks[indexToUpdate].likes = newBooks[indexToUpdate].likes ? newBooks[indexToUpdate].likes + 1 : 1;
-  //   setBooks(newBooks);
-
-  // }
-
-  // const handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value
-  //   })
-  // };
-
 
     //when something changes
     const handleInputChangeSearch = event => { 
@@ -79,7 +39,8 @@ const BooksAPI = () => {
 
       Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + apikey + "&maxResults=40")
         .then(data => { 
-          setResult.log(data.data.items)
+          console.log(data.data.items); 
+          setResult(data.data.items);
         })
     }
 
@@ -102,6 +63,13 @@ const BooksAPI = () => {
                 Search Book
               </FormBtn>
             </form>
+
+            {result.map ( bookSearch => (
+              <a target="_black" href={bookSearch.volumeInfo.previewLink}>
+                <img src={bookSearch.volumeInfo.imageLinks.thumbnail} alt={bookSearch.title}/>
+              </a>
+            ))}
+
           </Col>
         </Row>
       </Container>
