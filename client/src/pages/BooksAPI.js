@@ -9,9 +9,13 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import { LikeButton } from '../components/LikeButton';
 import { BookContext } from '../context/BookContext';
 import Axios from "axios";
+import JumbotronWelcome from "../components/JumbotronWelcome";
 
 const BooksAPI = () => {
-  const apikey = ''
+
+  // const apikey = ''
+
+  const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
   const [bookSearch, setBookSearch] = useState({
     search: '',
@@ -33,11 +37,13 @@ const BooksAPI = () => {
     //clicking search button
     const handleBookSearchClick = event => { 
       event.preventDefault();
+
+      console.log(API_KEY)
       
       const {search} = bookSearch; 
       console.log('search clicked', search)
 
-      Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + apikey + "&maxResults=40")
+      Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + API_KEY + "&maxResults=40")
         .then(data => { 
           console.log(data.data.items); 
           setResult(data.data.items);
@@ -45,24 +51,35 @@ const BooksAPI = () => {
     }
 
     return (
-      <Container fluid>
         <Row>
-          <Col size="md-6">
-           
+          <Col size="lg-12">
+              <div className="header">
+
+              <h1>
+                BookList 
+              </h1>
+              
             <form>
               <Input
+                className="searchengine"
                 value={bookSearch.search}
                 onChange={handleInputChangeSearch}
                 name="search"
-                placeholder="Title (required)"
-              />
-             
+                placeholder="Search any book"
+                />
+            </form>
+            <form>
+
               <FormBtn
+                className='booksearch'
                 onClick={handleBookSearchClick}
-              >
-                Search Book
+                >
+                Search
               </FormBtn>
             </form>
+
+
+                </div>
 
             {result.map ( bookSearch => (
               <a target="_black" href={bookSearch.volumeInfo.previewLink}>
@@ -72,7 +89,6 @@ const BooksAPI = () => {
 
           </Col>
         </Row>
-      </Container>
     );
 }
 

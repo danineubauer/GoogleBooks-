@@ -16,12 +16,13 @@ function App() {
       <div>
         <Nav />
         <Switch>
+          <Route exact path="/welcomepage" component={BooksAPI} />
+
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch>
-    <BooksAPI></BooksAPI>
       </div>
     </Router>
     </BookContext.Provider>

@@ -17,4 +17,8 @@ export default {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   }
+
+
+  // Google API book search: 
+  //saves all book array to db 
 };
