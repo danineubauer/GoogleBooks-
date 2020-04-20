@@ -4,6 +4,7 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Greeting from "./components/Greeting"
 import { BookContext } from './context/BookContext';
 import BooksAPI from "./pages/BooksAPI";
 
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        <Greeting />
         <Switch>
           <Route exact path="/welcomepage" component={BooksAPI} />
 
