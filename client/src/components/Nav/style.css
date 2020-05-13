@@ -1,10 +1,43 @@
+#root { 
+    width: 100%;
+}
+
+nav { 
+    width: 100%;
+}
+
+.container { 
+    width:100%;
+    margin-right:0;
+    background-color: transparent;
+    width: 100vh;
+}
+
+.flexbox { 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 0;
+    padding-right: 0;
+}
+
 .navbar { 
-    background-color: white;
     font-family: 'Playfair Display', serif;
-
+    color: white;
+    text-shadow: 5px 4px 10px black;
+    text-decoration: none;
 }
 
-.navbar-header { 
-    color: black;
+.nav-text:hover {
+    text-decoration: none;
+    color: rgb(164,61,48)
 }
 
+#signup { 
+    margin-right:
+}
+
+.login {
+    margin-right: 0px;
+}

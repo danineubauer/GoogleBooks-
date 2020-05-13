@@ -1,6 +1,14 @@
+html { 
+    overflow-y: scroll; 
+  }
+  
 body { 
-    margin: 0; 
-    padding: 0;
+
+    background-image: url("../../assets/booklibrary.jpg"); 
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+
 
 }
 .jumbotron { 
@@ -15,9 +23,10 @@ body {
 h1, h2 {
     font-family: 'Playfair Display', serif;
     color: white;
-    text-shadow: 3px 3px grey;
+    text-shadow: 5px 4px 10px black;
     font-size: 80px;
     margin-top: 0px;
+    
 }
 
 img { 
@@ -31,28 +40,21 @@ element.style {
 .form-control { 
     width: 500px;
     margin-top: 50px;
-
 }
-
 
 
 .header { 
-    height: 50vh;
-    background-color: white;
+    margin-top: 20vh;
+    margin-left: 15vh;
     align-items: center;
     justify-content: center;
     display: flex;
-    background-image: url("../../assets/booklibrary.jpg"); 
-    background-size: cover;
-
+    text-align: center;
 }
-
 
 
 form { 
     display: inline;
-    
-
 }
 
 .searchengine { 
@@ -64,12 +66,16 @@ form {
     outline: none;
     display: inline;
     margin-top: 40px;
+    box-shadow: 5px 4px 10px black;
 }
+
 
 .btn { 
     margin-top: 15px;
     border-radius: 25px;
     height: 50px;
-    background-color:#ec7d79;
-    border-color: #ec7d79;
+    background-color: rgb(164,61,48);
+    box-shadow: 5px 4px 10px black;
+    color: white;
 }
+

@@ -6,7 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Greeting from "./components/Greeting"
 import { BookContext } from './context/BookContext';
-import BooksAPI from "./pages/BooksAPI";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -14,13 +14,12 @@ function App() {
   return (
     <BookContext.Provider value={{ books, setBooks }}>
     <Router>
-      <div>
-        <Nav />
-        <Greeting />
-        <Switch>
-          <Route exact path="/welcomepage" component={BooksAPI} />
 
-          <Route exact path="/" component={Books} />
+      <div>
+    <Nav></Nav>
+        <Switch>
+
+          <Route exact path="/" component={LandingPage} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />

@@ -4,40 +4,30 @@ import { BookContext } from '../../context/BookContext';
 import "./style.css"
 
 function Nav() {
-  const { books } = useContext(BookContext);
-
-  const calcTotalLikes = () => {
-    return books.reduce((totalLikes, book) => {
-      return book.likes ? book.likes + totalLikes : totalLikes;
-    }, 0);
-  }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar nav">
       <div className="container">
-        <div className="navbar-header">
-          <Link className="navbar" to="/">
-            React Reading List
-          </Link>
-        </div>
+        <div className="flexbox">
+
+
+
         <div>
-          <Link className="navbar" to="/welcomepage">
-            welcome page
-          </Link>
-        </div>
-        <div className="navbar-header">
-          <Link className="navbar" to="/">
+          <Link className="navbar nav-text signup" id="signup" to="/">
             Sign Up 
           </Link>
         </div>
-        <div className="navbar-header">
-          <Link className="navbar" to="/">
+        <div>
+          <h3>|</h3>
+        </div>
+        <div>
+          <Link className="navbar nav-text login" to="/welcomepage">
             Log In
           </Link>
         </div>
-          
-        <div className="nav navbar-nav navbar-right text-white">Total Likes: {calcTotalLikes()}</div>
       </div>
+      </div>
+
     </nav>
   );
 }
