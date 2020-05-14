@@ -42,7 +42,7 @@ const LandingPage = () => {
     const { search } = bookSearch;
     console.log('search clicked', search)
 
-    Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + API_KEY + "&maxResults=7")
+    Axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + API_KEY + "&maxResults=14")
       .then(data => {
         console.log(data.data.items);
         setResult(data.data.items);
@@ -83,7 +83,7 @@ const LandingPage = () => {
           <div className="book-search-container">
             
             <Col size="lg-12">
-              
+              <h5>Your search: </h5>  
               {result.map(bookSearch => (
                 <a target="_black" href={bookSearch.volumeInfo.previewLink}>
                   <img src={bookSearch.volumeInfo.imageLinks.thumbnail} alt={bookSearch.title} />

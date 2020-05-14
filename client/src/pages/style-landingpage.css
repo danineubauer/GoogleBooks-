@@ -1,12 +1,20 @@
 .book-search-container { 
     background-color: white;
     width: 1300px;
+    height: 200px;
     margin: 20px;
     padding: 10px;
     display: flex;
+    box-shadow: 5px 4px 10px black;
+    padding-left: 40px;
+
 }
 
 img { 
     height: 180px;
     width: 150px;
+}
+
+div.book-search-container { 
+    overflow-x: scroll;
 }
