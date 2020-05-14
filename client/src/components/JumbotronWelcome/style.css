@@ -1,7 +1,7 @@
 html { 
     overflow-y: scroll; 
   }
-  
+
 body { 
 
     background-image: url("../../assets/booklibrary.jpg"); 
@@ -44,7 +44,7 @@ element.style {
 
 
 .header { 
-    margin-top: 20vh;
+    margin-top: 15vh;
     margin-left: 15vh;
     align-items: center;
     justify-content: center;
@@ -56,6 +56,7 @@ element.style {
 form { 
     display: inline;
 }
+
 
 .searchengine { 
     height: 50px;
@@ -77,5 +78,15 @@ form {
     background-color: rgb(164,61,48);
     box-shadow: 5px 4px 10px black;
     color: white;
+}
+
+h4 { 
+    display: flex;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    color:  white;
+    text-shadow: 2px 1px 1px  black;
+    font-size: 35px;
+    margin-top: 0px;
 }
 

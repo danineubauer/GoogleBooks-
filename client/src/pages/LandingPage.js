@@ -10,6 +10,7 @@ import { LikeButton } from '../components/LikeButton';
 import { BookContext } from '../context/BookContext';
 import Axios from "axios";
 import JumbotronWelcome from "../components/JumbotronWelcome";
+import "./style-landingpage.css"
 
 const LandingPage = () => {
 
@@ -53,9 +54,7 @@ const LandingPage = () => {
       <Col size="lg-12">
         <div className="header">
 
-          <h1>
-            BookList
-              </h1>
+          <h1>BookList</h1>
 
           <form>
             <Input
@@ -74,35 +73,27 @@ const LandingPage = () => {
               Search
               </FormBtn>
           </form>
-
-
         </div>
-      </Col>
-{/*       
-      
-       <div className="container">
+        <div className="headertitle">
+          <h4>Read. Share. Repeat.</h4>
+        </div>
+      </Col>       
+      <div>
+        <div className="container">
+          <div className="book-search-container">
+            
+            <Col size="lg-12">
+              
+              {result.map(bookSearch => (
+                <a target="_black" href={bookSearch.volumeInfo.previewLink}>
+                  <img src={bookSearch.volumeInfo.imageLinks.thumbnail} alt={bookSearch.title} />
+                </a>
+              ))}
 
-      <Col size="lg-12">
-        <h5>Click search to see your search:</h5>
+            </Col>
 
-        {result.map(bookSearch => (
-          <a target="_black" href={bookSearch.volumeInfo.previewLink}>
-            <img src={bookSearch.volumeInfo.imageLinks.thumbnail} alt={bookSearch.title} />
-          </a>
-        ))}
-
-      </Col>
-      </div>
-
-      <div className="container">
-        <Col size="lg-6">
-          <h5>Your book list:</h5>
-        </Col>
-
-        <Col size="lg-6">
-          <h5>Your recent searches:</h5>
-        </Col>
-      </div>  */}
+          </div>
+        </div>      </div>
     </Row>
 
     );

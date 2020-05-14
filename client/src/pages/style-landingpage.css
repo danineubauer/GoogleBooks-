@@ -1,0 +1,12 @@
+.book-search-container { 
+    background-color: white;
+    width: 1300px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+}
+
+img { 
+    height: 180px;
+    width: 150px;
+}
